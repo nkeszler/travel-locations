@@ -1,0 +1,8 @@
+<div id='profile_welcome'>
+	<% if @user %>
+		Welcome <%= @user.name %>
+	<% end %>
+	<form action='/profile/favs' method='get'>
+		<input type='submit' id='pick_favs' value='Pick Favorites'>
+	</form>
+</div>

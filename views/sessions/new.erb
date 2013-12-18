@@ -2,4 +2,7 @@
 	Email:<input name='email' type='text' autocomplete='off'>
 	Password:<input name='password' type='password' autocomplete='off'>
 	<input type='submit' value='Log In'>
+	<% if @redirect == :profile %>
+		<input type='hidden' name='redirect' value='profile'>
+	<% end %>
 </form>

@@ -8,12 +8,12 @@ require './models/photo'
 
 file.each do |line| 
 	location, name, description, image =  line.split(':')
-	destination = Location.new(location: location,
+	destination = Location.create(location: location,
 				 			   name: name,
 				 			   description: description)
-
+	puts destination.id
+	photo = Photo.create(:path => image, 
+						 :location => destination)
 	puts destination.inspect
-	photo = Photo.create(:path => image)
-	destination.photos << photo
 end
 

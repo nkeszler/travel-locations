@@ -4,5 +4,5 @@ class Photo
 	property :id, Serial
 	property :path, String
 
-	belongs_to :location
+	belongs_to :location, :required => false
 end

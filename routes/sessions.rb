@@ -1,6 +1,9 @@
 class LocationSite < Sinatra::Application
 
 	get '/sessions/new' do 
+		if params[:redirect]
+			@redirect = :profile
+		end
 		erb :"/sessions/new"
 	end
 
@@ -8,7 +11,11 @@ class LocationSite < Sinatra::Application
 		user = User.authenticate(params[:email],params[:password])
 		if user
 			session[:user_id] = user.id
-			redirect to('/')
+			if params[:redirect]
+				redirect to('/profile')
+			else
+				redirect to('/')
+			end
 		else
 			flash[:errors] = ["Email or Password incorrect"]
 			erb :"/sessions/new"

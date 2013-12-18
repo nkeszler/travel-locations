@@ -226,3 +226,9 @@ body {
 	margin-left: 0px;
 	margin-right: 0px;
 }
+
+input#pick_favs {
+	display: block;
+	top: 20px;
+	position: relative;
+}

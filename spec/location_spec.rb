@@ -2,7 +2,7 @@ require 'location'
 
 describe 'Location' do 
 
-	let(:location) {Location.new('China')}
+	let(:location) {LocalLocation.new('China')}
 
 	it "should initialize with a name" do 
 		expect(location.name).not_to eq(nil)

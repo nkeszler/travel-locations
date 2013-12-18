@@ -13,11 +13,9 @@ env = ENV["RACK_ENV"] || "development"
 
 DataMapper.setup(:default, "sqlite:#{Dir.pwd}/data/travel_location_#{env}")
 
-require './models/user'
 require './models/location'
+require './models/user'
 require './models/photo'
-require './models/relationships/fav_locations_users'
-require './models/fav_location'
 
 DataMapper.finalize
 DataMapper.auto_upgrade!
